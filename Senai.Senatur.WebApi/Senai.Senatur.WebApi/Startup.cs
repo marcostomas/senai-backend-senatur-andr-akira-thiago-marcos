@@ -90,7 +90,6 @@ namespace Senai.Senatur.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
 
             app.UseSwagger();
 
@@ -100,6 +99,8 @@ namespace Senai.Senatur.WebApi
             });
 
             app.UseAuthentication();
+
+            app.UseMvc();
         }
     }
 }

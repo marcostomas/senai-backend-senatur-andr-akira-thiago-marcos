@@ -23,5 +23,10 @@ namespace Senai.Senatur.WebApi.Repositories
         {
             return ctx.Usuarios.Include(e => e.IdTipoUsuarioNavigation).ToList();
         }
+
+        public Usuarios BuscarPorEmailSenha(string email, string senha)
+        {
+            return ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+        }
     }
 }

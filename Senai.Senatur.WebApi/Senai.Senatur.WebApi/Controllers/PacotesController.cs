@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Senatur.WebApi.Domains;
@@ -22,7 +23,7 @@ namespace Senai.Senatur.WebApi.Controllers
             _pacotesRepository = new PacotesRepository();
         }
 
-
+        [Authorize(Roles = "1, 2")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -35,6 +36,14 @@ namespace Senai.Senatur.WebApi.Controllers
             return Ok(_pacotesRepository.BuscarPorId(id));
         }
 
+        //EXTRA
+        [HttpGet("Status/{status}"]
+        public IActionResult GetByActive(bool status)
+        {
+            return Ok(_pacotesRepository.ListaAtivos(status));
+        }
+
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Insert (TabelaPacotes novoPacote)
         {
@@ -42,7 +51,7 @@ namespace Senai.Senatur.WebApi.Controllers
 
             return Ok("Pacote criado com sucesso");
         }
-
+        [Authorize(Roles="1")]
         [HttpPut("{id}")]
         public IActionResult Update(int id, TabelaPacotes pacoteAtualizado)
         {

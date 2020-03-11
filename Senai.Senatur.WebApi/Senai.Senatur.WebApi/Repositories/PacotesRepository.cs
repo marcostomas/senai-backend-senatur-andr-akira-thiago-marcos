@@ -48,5 +48,10 @@ namespace Senai.Senatur.WebApi.Repositories
             ctx.TabelaPacotes.Update(pacoteAtualizado);
             ctx.SaveChanges();
         }
+
+        public List<TabelaPacotes> ListarAtivos(bool status)
+        {
+            return ctx.TabelaPacotes.ToList().FindAll(p => p.Ativo == status);
+        }
     }
 }

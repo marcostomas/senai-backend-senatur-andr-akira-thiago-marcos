@@ -15,6 +15,9 @@ namespace Senai.Senatur.WebApi.Interfaces
         void CadastrarPacote(TabelaPacotes novoPacote);
 
         void AtualizarPacote(int id, TabelaPacotes pacoteAtualizado);
-        
+
+        //EXTRA
+
+        List<TabelaPacotes> ListaAtivos(bool status);
     }
 }
