@@ -17,12 +17,18 @@ namespace Senai.Senatur.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                
                 .AddMvc()
-                .AddJsonOptions(options =>
-                {
+
+                
+                .AddJsonOptions(options => {
+                  
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                  
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 })
+
+            
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
         }
 

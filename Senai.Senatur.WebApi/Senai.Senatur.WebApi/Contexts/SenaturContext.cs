@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Senai.Senatur.WebApi.Domains
 {
-    public partial class SenaturContext : DbContext
+    public partial class SenaTurContext : DbContext
     {
-        public SenaturContext()
+        public SenaTurContext()
         {
         }
 
-        public SenaturContext(DbContextOptions<SenaturContext> options)
+        public SenaTurContext(DbContextOptions<SenaTurContext> options)
             : base(options)
         {
         }
@@ -24,9 +24,7 @@ namespace Senai.Senatur.WebApi.Domains
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=N-1S-DEV-17\\SQLEXPRESS; Initial Catalog=Senatur_Manha; user Id=sa; pwd=sa@132;");
-                //optionsBuilder.UseSqlServer("Data Source=DEV801\\SQLEXPRESS; Initial Catalog=Senatur_Manha; user Id=sa; pwd=sa@132;");
-                //optionsBuilder.UseSqlServer("Data Source=DEV1201\\SQLEXPRESS; Initial Catalog=Senatur_Manha; user Id=sa; pwd=sa@132;");
+                optionsBuilder.UseSqlServer("Data Source=LAPTOP-OMA8SO3J\\SQLEXPRESS; Initial Catalog=Senatur_Manha; user Id=sa; pwd=thi@132;");
             }
         }
 
@@ -62,7 +60,7 @@ namespace Senai.Senatur.WebApi.Domains
                 entity.HasKey(e => e.IdTipoUsuario);
 
                 entity.HasIndex(e => e.Titulo)
-                    .HasName("UQ__TipoUsua__7B406B5689D4A93D")
+                    .HasName("UQ__TipoUsua__7B406B560FB4B9E2")
                     .IsUnique();
 
                 entity.Property(e => e.IdTipoUsuario).HasColumnName("ID_TipoUsuario");
@@ -77,7 +75,7 @@ namespace Senai.Senatur.WebApi.Domains
                 entity.HasKey(e => e.IdUsuario);
 
                 entity.HasIndex(e => e.Email)
-                    .HasName("UQ__Usuarios__A9D105347C0D422D")
+                    .HasName("UQ__Usuarios__A9D10534FB507B8C")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("ID_Usuario");

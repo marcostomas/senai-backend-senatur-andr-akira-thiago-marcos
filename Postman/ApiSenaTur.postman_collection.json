@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "707bf0cb-44ec-4475-bd45-26420c2df353",
+		"name": "ApiSenaTur",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "UsuariosGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pacotes",
+			"item": [
+				{
+					"name": "PacotesGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PacotesPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"NomePacote\": \"Roochelle Corporate Hotel-Curitiba  \",\n\t\"Descricao\": \" 4 DIAS - VOO + Hospedagem, Café da manhã incluso, localizado no Centro da Cidade\",\n\t\"DataIda\":\"2020/07/30\",\n\t\"DataVolta\":\"2020/08/03\",\n\t\"Valor\":\"285,00\",\n\t\"Ativo\":0,\n\t\"NomeCidade\":\"Curitiba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PacotesPut",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

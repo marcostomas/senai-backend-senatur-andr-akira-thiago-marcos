@@ -10,6 +10,6 @@ namespace Senai.Senatur.WebApi.Interfaces
     {
         List<Usuarios> Listar();
 
-        void Cadastrar(Usuarios novoUsuario);
+        List<Usuarios> ListarTipoUsuario();
     }
 }

@@ -1,4 +1,5 @@
-﻿using Senai.Senatur.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.Senatur.WebApi.Domains;
 using Senai.Senatur.WebApi.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -7,22 +8,20 @@ using System.Threading.Tasks;
 
 namespace Senai.Senatur.WebApi.Repositories
 {
-
     public class UsuarioRepository : IUsuarioRepository
     {
-        SenaturContext ctx = new SenaturContext();
+
+        SenaTurContext ctx = new SenaTurContext();
 
         public List<Usuarios> Listar()
         {
+            
             return ctx.Usuarios.ToList();
         }
 
-        public void Cadastrar(Usuarios novoUsuario)
+        public List<Usuarios> ListarTipoUsuario()
         {
-            ctx.Usuarios.Add(novoUsuario);
-
-            
-            ctx.SaveChanges();
+            return ctx.Usuarios.Include(e => e.IdTipoUsuarioNavigation).ToList();
         }
     }
 }

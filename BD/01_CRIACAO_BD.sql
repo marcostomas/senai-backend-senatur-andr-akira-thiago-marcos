@@ -25,4 +25,4 @@ CREATE TABLE Tabela_Pacotes(
 	NomeCidade VARCHAR(200) NOT NULL,
 );
 
---DROP TABLE Tabela_Pacotes
+
